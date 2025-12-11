@@ -11,16 +11,15 @@ import java.util.UUID;
 /**
  * Created by jt, Spring Framework Guru.
  */
-@JsonDeserialize(builder = Customer.CustomerBuilder.class)
+@JsonDeserialize(builder = CustomerDTO.CustomerDTOBuilder.class)
 @Data
 @Builder
-public class Customer {
+public class CustomerDTO {
+    @JsonProperty("id")
+    private UUID id;
 
     @JsonProperty("name")
     private String name;
-
-    @JsonProperty("id")
-    private UUID id;
 
     @JsonProperty("version")
     private Integer version;
